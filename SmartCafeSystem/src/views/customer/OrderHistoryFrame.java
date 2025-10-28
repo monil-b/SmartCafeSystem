@@ -11,7 +11,6 @@ import models.*;
 
 public class OrderHistoryFrame extends JFrame {
     
-    // Modern coffee theme colors
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -43,7 +42,7 @@ public class OrderHistoryFrame extends JFrame {
     private void initComponents() {
         setLayout(null);
         
-        // Header with gradient
+        // Header 
         JPanel header = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -78,7 +77,7 @@ public class OrderHistoryFrame extends JFrame {
         
         add(header);
         
-        // Orders panel with rounded corners
+        // Orders panel 
         JPanel ordersPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -181,7 +180,7 @@ public class OrderHistoryFrame extends JFrame {
         
         add(ordersPanel);
         
-        // Rounded button for View Receipt
+        // View Receipt
         JButton btnViewReceipt = new RoundedButton("View Receipt", 18);
         btnViewReceipt.setBounds(300, 620, 180, 52);
         btnViewReceipt.setFont(new Font("Arial", Font.BOLD, 16));
@@ -203,7 +202,7 @@ public class OrderHistoryFrame extends JFrame {
         
         add(btnViewReceipt);
         
-        // Rounded button for Back
+        // Back
         JButton btnBack = new RoundedButton("← Back to Menu", 18);
         btnBack.setBounds(520, 620, 180, 52);
         btnBack.setFont(new Font("Arial", Font.BOLD, 16));
