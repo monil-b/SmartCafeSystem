@@ -8,7 +8,6 @@ import models.*;
 
 public class CartFrame extends JFrame {
     
-    // Modern coffee theme colors
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -43,7 +42,6 @@ public class CartFrame extends JFrame {
     private void initComponents() {
         setLayout(null);
         
-        // Header with coffee gradient
         JPanel header = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -76,7 +74,7 @@ public class CartFrame extends JFrame {
         lblSubtitle.setBounds(120, 65, 450, 25);
         header.add(lblSubtitle);
         
-        // Item count badge - ROUNDED
+        // Item count badge
         int totalItems = 0;
         for (CartItem item : cartItems) {
             totalItems += item.getQuantity();
@@ -108,7 +106,7 @@ public class CartFrame extends JFrame {
         contentPanel.setLayout(null);
         contentPanel.setBounds(0, 110, 1000, 640);
         
-        // Left side - Cart items with ROUNDED corners
+        // Cart items 
         JPanel cartItemsPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -157,7 +155,7 @@ public class CartFrame extends JFrame {
         
         contentPanel.add(cartItemsPanel);
         
-        // Right side - Order summary with ROUNDED corners
+        // Order summary 
         JPanel summaryPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -251,7 +249,7 @@ public class CartFrame extends JFrame {
         
         updateTotal();
         
-        // Checkout button - ROUNDED
+        // Checkout button 
         JButton btnCheckout = new JButton("Proceed to Checkout") {
             @Override
             protected void paintComponent(Graphics g) {
@@ -288,7 +286,7 @@ public class CartFrame extends JFrame {
         
         contentPanel.add(summaryPanel);
         
-        // Bottom buttons - ROUNDED
+        // Bottom buttons 
         JButton btnContinue = new JButton("← Continue Shopping") {
             @Override
             protected void paintComponent(Graphics g) {
@@ -326,7 +324,7 @@ public class CartFrame extends JFrame {
         
         contentPanel.add(btnContinue);
         
-        // Security info - ROUNDED
+        // Security info
         JPanel securityPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -380,7 +378,7 @@ public class CartFrame extends JFrame {
         ));
         card.setOpaque(false);
         
-        // Item image with ACTUAL IMAGE from resources (ROUNDED)
+        // Item image with ACTUAL IMAGE from resources 
         JPanel imagePanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -432,7 +430,7 @@ public class CartFrame extends JFrame {
         lblName.setBounds(115, 18, 260, 28);
         card.add(lblName);
         
-        // Item category badge - ROUNDED
+        // Item category badge 
         JLabel lblCategory = new JLabel(item.getMenuItem().getCategory()) {
             @Override
             protected void paintComponent(Graphics g) {
@@ -458,7 +456,7 @@ public class CartFrame extends JFrame {
         lblPrice.setBounds(115, 78, 150, 20);
         card.add(lblPrice);
         
-        // Quantity controls - ROUNDED buttons
+        // Quantity controls 
         JPanel qtyPanel = new JPanel();
         qtyPanel.setLayout(null);
         qtyPanel.setBounds(380, 30, 130, 42);
@@ -469,17 +467,11 @@ public class CartFrame extends JFrame {
             protected void paintComponent(Graphics g) {
                 Graphics2D g2d = (Graphics2D) g;
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                // Fill background
                 g2d.setColor(SOFT_WHITE);
                 g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 12, 12);
-                
-                // Draw border
                 g2d.setColor(LIGHT_COFFEE);
                 g2d.setStroke(new BasicStroke(2));
                 g2d.drawRoundRect(1, 1, getWidth()-3, getHeight()-3, 12, 12);
-                
-                // Draw minus symbol
                 g2d.setColor(COFFEE_BROWN);
                 g2d.setStroke(new BasicStroke(3));
                 int centerX = getWidth() / 2;
@@ -516,19 +508,13 @@ public class CartFrame extends JFrame {
             protected void paintComponent(Graphics g) {
                 Graphics2D g2d = (Graphics2D) g;
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                // Fill background
                 g2d.setColor(COFFEE_BROWN);
                 g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 12, 12);
-                
-                // Draw plus symbol
                 g2d.setColor(WHITE_SMOKE);
                 g2d.setStroke(new BasicStroke(3));
                 int centerX = getWidth() / 2;
                 int centerY = getHeight() / 2;
-                // Horizontal line
                 g2d.drawLine(centerX - 7, centerY, centerX + 7, centerY);
-                // Vertical line
                 g2d.drawLine(centerX, centerY - 7, centerX, centerY + 7);
             }
         };
