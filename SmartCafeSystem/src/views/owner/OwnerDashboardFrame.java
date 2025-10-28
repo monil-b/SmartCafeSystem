@@ -7,16 +7,13 @@ import controllers.OwnerController;
 import models.Owner;
 
 public class OwnerDashboardFrame extends JFrame {
-    
-    // Coffee theme colors
+
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
     private static final Color DARK_BROWN = new Color(78, 52, 46);
     private static final Color WHITE_SMOKE = new Color(250, 248, 245);
     private static final Color SOFT_WHITE = new Color(255, 253, 250);
-    
-    // Card colors from image
     private static final Color CARD_TOTAL_ORDERS = new Color(88, 105, 103);
     private static final Color CARD_REVENUE = new Color(119, 140, 103);
     private static final Color CARD_PENDING = new Color(204, 153, 102);
@@ -47,7 +44,7 @@ public class OwnerDashboardFrame extends JFrame {
     private void initComponents() {
         setLayout(null);
         
-        // Top bar with gradient
+        // Top bar 
         JPanel topBar = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
