@@ -35,7 +35,7 @@ public class OrderProcessor {
         activeOrders.put(orderId, task);
         orderExecutor.submit(task);
         
-        // *** FIX: Assign order to kitchen station ***
+        // *** Assign order to kitchen station ***
         KitchenManager.assignOrderToStation(orderId);
         
         System.out.println("✓ Order #" + orderId + " submitted to processing queue");
