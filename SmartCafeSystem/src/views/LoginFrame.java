@@ -10,7 +10,6 @@ import views.customer.MenuFrame;
 
 public class LoginFrame extends JFrame {
     
-    // Enhanced coffee theme colors
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -39,23 +38,16 @@ public class LoginFrame extends JFrame {
     private void initComponents() {
         setLayout(null);
         
-        // Coffee cup icon/logo area with shadow effect
         JPanel logoPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                // Shadow
                 g2d.setColor(new Color(0, 0, 0, 30));
                 g2d.fillOval(5, 5, 100, 100);
-                
-                // Main circle
                 g2d.setColor(COFFEE_BROWN);
                 g2d.fillOval(0, 0, 100, 100);
-                
-                // Highlight
                 g2d.setColor(new Color(255, 255, 255, 40));
                 g2d.fillOval(20, 15, 40, 40);
             }
@@ -99,12 +91,8 @@ public class LoginFrame extends JFrame {
             protected void paintComponent(Graphics g) {
                 Graphics2D g2 = (Graphics2D) g.create();
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                // Shadow
                 g2.setColor(new Color(0, 0, 0, 20));
                 g2.fill(new RoundRectangle2D.Float(2, 2, getWidth()-2, getHeight()-2, 12, 12));
-                
-                // Background
                 g2.setColor(getBackground());
                 g2.fill(new RoundRectangle2D.Float(0, 0, getWidth()-2, getHeight()-2, 12, 12));
                 g2.dispose();
@@ -243,7 +231,7 @@ public class LoginFrame extends JFrame {
         add(divider);
         yPos += 15;
         
-        // Owner Login button - styled to match theme
+        // Owner Login button
         JButton btnOwnerLogin = createRoundedButton("Owner Login", DARK_BROWN, WHITE_SMOKE);
         btnOwnerLogin.setBounds(125, yPos, 300, 50);
         btnOwnerLogin.setFont(new Font("Arial", Font.BOLD, 16));
@@ -277,12 +265,8 @@ public class LoginFrame extends JFrame {
             protected void paintComponent(Graphics g) {
                 Graphics2D g2 = (Graphics2D) g.create();
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                // Shadow
                 g2.setColor(new Color(0, 0, 0, 40));
                 g2.fill(new RoundRectangle2D.Float(2, 4, getWidth()-2, getHeight()-2, 15, 15));
-                
-                // Button background
                 g2.setColor(getBackground());
                 g2.fill(new RoundRectangle2D.Float(0, 0, getWidth()-2, getHeight()-4, 15, 15));
                 g2.dispose();
@@ -332,12 +316,8 @@ public class LoginFrame extends JFrame {
             protected void paintComponent(Graphics g) {
                 Graphics2D g2 = (Graphics2D) g.create();
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                // Shadow
                 g2.setColor(new Color(0, 0, 0, 20));
                 g2.fill(new RoundRectangle2D.Float(2, 2, getWidth()-2, getHeight()-2, 12, 12));
-                
-                // Background
                 g2.setColor(getBackground());
                 g2.fill(new RoundRectangle2D.Float(0, 0, getWidth()-2, getHeight()-2, 12, 12));
                 g2.dispose();
