@@ -9,7 +9,6 @@ import threads.OrderProcessor;
 
 public class PaymentFrame extends JFrame {
     
-    // Modern coffee theme colors
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -50,7 +49,6 @@ public class PaymentFrame extends JFrame {
     private void initComponents() {
         setLayout(null);
         
-        // Header with gradient
         JPanel header = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -84,7 +82,7 @@ public class PaymentFrame extends JFrame {
         
         add(header);
         
-        // Order summary card - ROUNDED
+        // Order summary card 
         JPanel summaryCard = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -156,7 +154,7 @@ public class PaymentFrame extends JFrame {
         
         add(summaryCard);
         
-        // Payment method card - ROUNDED
+        // Payment method card
         JPanel paymentCard = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -211,7 +209,7 @@ public class PaymentFrame extends JFrame {
         
         add(paymentCard);
         
-        // Timer info card - ROUNDED
+        // Timer info card 
         JPanel timerCard = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -247,7 +245,7 @@ public class PaymentFrame extends JFrame {
         
         add(timerCard);
         
-        // Buttons - ROUNDED
+        // Buttons 
         JButton btnCancel = new JButton("← Cancel") {
             @Override
             protected void paintComponent(Graphics g) {
