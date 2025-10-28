@@ -11,7 +11,6 @@ import models.*;
 
 public class OrderQueueFrame extends JFrame {
     
-    // Coffee theme colors - EXACT FROM ORIGINAL FILE
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -49,7 +48,7 @@ public class OrderQueueFrame extends JFrame {
     private void initComponents() {
         setLayout(null);
         
-        // Header Panel with Gradient
+        // Header Panel 
         JPanel header = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -83,7 +82,7 @@ public class OrderQueueFrame extends JFrame {
         
         add(header);
         
-        // Filter Panel with Rounded Border
+        // Filter Panel
         JPanel filterPanel = new RoundedPanel(20, SOFT_WHITE, LIGHT_COFFEE);
         filterPanel.setBounds(40, 120, 1020, 70);
         filterPanel.setLayout(null);
@@ -108,7 +107,7 @@ public class OrderQueueFrame extends JFrame {
         
         add(filterPanel);
         
-        // Orders Table Panel with Rounded Border
+        // Orders Table Panel 
         JPanel ordersPanel = new RoundedPanel(20, SOFT_WHITE, LIGHT_COFFEE);
         ordersPanel.setBounds(40, 210, 1020, 420);
         ordersPanel.setLayout(new BorderLayout(10, 10));
@@ -282,7 +281,6 @@ public class OrderQueueFrame extends JFrame {
                 g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
                 g2d.dispose();
                 
-                // Paint text manually to avoid issues
                 FontMetrics fm = g.getFontMetrics();
                 int textWidth = fm.stringWidth(getText());
                 int textHeight = fm.getAscent();
