@@ -13,10 +13,9 @@ import java.util.concurrent.Semaphore;
  */
 public class DatabaseConnection {
     
-    // Database credentials - CHANGE PASSWORD HERE!
 	private static final String URL = "jdbc:mysql://localhost:3306/smartcafe";
 	private static final String USER = "root";
-	private static final String PASSWORD = "Monil0!73#"; 
+	private static final String PASSWORD = "1234"; 
     
     // Connection pool configuration
     private static final int POOL_SIZE = 5;
