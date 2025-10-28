@@ -7,16 +7,13 @@ import controllers.OwnerController;
 import models.Owner;
 
 public class AnalyticsFrame extends JFrame {
-    
-    // Coffee theme colors
+
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
     private static final Color DARK_BROWN = new Color(78, 52, 46);
     private static final Color WHITE_SMOKE = new Color(250, 248, 245);
     private static final Color SOFT_WHITE = new Color(255, 253, 250);
-    
-    // Coffee theme colors for metric cards
     private static final Color ESPRESSO_BLUE = new Color(77, 93, 83);
     private static final Color MOCHA_GREEN = new Color(109, 131, 84);
     private static final Color CARAMEL_ORANGE = new Color(196, 140, 71);
@@ -121,7 +118,7 @@ public class AnalyticsFrame extends JFrame {
         
         add(chartsPanel);
         
-        // Back button - repositioned to be visible
+        // Back button 
         JButton btnBack = createStyledButton("← Back to Dashboard", 420, 660, 250, 50);
         btnBack.setBackground(COFFEE_BROWN);
         btnBack.setForeground(WHITE_SMOKE);
@@ -159,8 +156,6 @@ public class AnalyticsFrame extends JFrame {
         int pending = (Integer) analytics.getOrDefault("pendingOrders", 0);
         int preparing = (Integer) analytics.getOrDefault("preparingOrders", 0);
         int ready = (Integer) analytics.getOrDefault("readyOrders", 0);
-        
-        // Metric cards with proper spacing to fit all 5 cards
         int xPos = 30;
         int cardWidth = 182;
         int cardSpacing = 16;
@@ -195,8 +190,6 @@ public class AnalyticsFrame extends JFrame {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                
-                // Vibrant gradient background
                 Color lighterColor = new Color(
                     Math.min(255, color.getRed() + 30),
                     Math.min(255, color.getGreen() + 30),
@@ -205,8 +198,6 @@ public class AnalyticsFrame extends JFrame {
                 GradientPaint gp = new GradientPaint(0, 0, lighterColor, 0, getHeight(), color);
                 g2d.setPaint(gp);
                 g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-                
-                // Add subtle shadow effect
                 g2d.setColor(new Color(0, 0, 0, 30));
                 g2d.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 15, 15);
             }
