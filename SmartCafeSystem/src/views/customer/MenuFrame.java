@@ -14,7 +14,6 @@ import views.LoginFrame;
 
 public class MenuFrame extends JFrame {
     
-    // Modern coffee theme colors
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -59,7 +58,7 @@ public class MenuFrame extends JFrame {
     private void initComponents() {
         setLayout(null);
         
-        // Top bar with coffee theme gradient
+        // Top bar 
         JPanel topBar = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -75,7 +74,6 @@ public class MenuFrame extends JFrame {
         topBar.setBounds(0, 0, 1100, 90);
         topBar.setLayout(null);
         
-        // Coffee icon
         JLabel lblIcon = new JLabel("☕");
         lblIcon.setFont(new Font("Arial", Font.PLAIN, 40));
         lblIcon.setBounds(30, 20, 50, 50);
@@ -93,7 +91,7 @@ public class MenuFrame extends JFrame {
         lblSubtext.setBounds(90, 48, 300, 20);
         topBar.add(lblSubtext);
         
-        // Cart button - ROUNDED
+        // Cart button 
         JButton btnCart = new JButton("🛒 Cart") {
             @Override
             protected void paintComponent(Graphics g) {
@@ -128,7 +126,7 @@ public class MenuFrame extends JFrame {
         
         topBar.add(btnCart);
         
-        // Orders button - ROUNDED
+        // Orders button
         JButton btnOrderHistory = new JButton("📋 Orders") {
             @Override
             protected void paintComponent(Graphics g) {
@@ -163,7 +161,7 @@ public class MenuFrame extends JFrame {
         
         topBar.add(btnOrderHistory);
         
-        // Logout button - ROUNDED with VISIBLE BORDER
+        // Logout button 
         JButton btnLogout = new JButton("Logout") {
             @Override
             protected void paintComponent(Graphics g) {
@@ -198,7 +196,7 @@ public class MenuFrame extends JFrame {
 
         topBar.add(btnLogout);
         
-        // Cart badge - RED CIRCLE (Added LAST for proper z-order)
+        // Cart badge 
         lblCartCount = new JLabel("0", SwingConstants.CENTER) {
             @Override
             protected void paintComponent(Graphics g) {
@@ -450,7 +448,7 @@ public class MenuFrame extends JFrame {
         card.add(lblStatusDot);
         card.add(lblStatus);
         
-        // ROUNDED View Receipt button
+        // View Receipt button
         JButton btnDetails = new JButton("View Receipt") {
             @Override
             protected void paintComponent(Graphics g) {
@@ -543,7 +541,7 @@ public class MenuFrame extends JFrame {
             }
         });
         
-        // Item image with rounded corners
+        // Item image 
         JPanel imagePanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -637,23 +635,16 @@ public class MenuFrame extends JFrame {
         int currentQty = inCart ? cart.get(item.getItemId()).getQuantity() : 0;
         
         if (inCart) {
-            // ROUNDED Minus button - Using Graphics
             JButton btnMinus = new JButton() {
                 @Override
                 protected void paintComponent(Graphics g) {
                     Graphics2D g2d = (Graphics2D) g;
                     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                    
-                    // Fill background
                     g2d.setColor(WHITE_SMOKE);
                     g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-                    
-                    // Draw border
                     g2d.setColor(LIGHT_COFFEE);
                     g2d.setStroke(new BasicStroke(2));
                     g2d.drawRoundRect(1, 1, getWidth()-3, getHeight()-3, 15, 15);
-                    
-                    // Draw minus symbol (horizontal line)
                     g2d.setColor(COFFEE_BROWN);
                     g2d.setStroke(new BasicStroke(3));
                     int centerX = getWidth() / 2;
@@ -683,25 +674,18 @@ public class MenuFrame extends JFrame {
             lblQty.setBorder(BorderFactory.createMatteBorder(2, 0, 2, 0, LIGHT_COFFEE));
             controlPanel.add(lblQty);
             
-            // ROUNDED Plus button - Using Graphics
             JButton btnPlus = new JButton() {
                 @Override
                 protected void paintComponent(Graphics g) {
                     Graphics2D g2d = (Graphics2D) g;
                     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                    
-                    // Fill background
                     g2d.setColor(COFFEE_BROWN);
                     g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-                    
-                    // Draw plus symbol
                     g2d.setColor(WHITE_SMOKE);
                     g2d.setStroke(new BasicStroke(3));
                     int centerX = getWidth() / 2;
                     int centerY = getHeight() / 2;
-                    // Horizontal line
                     g2d.drawLine(centerX - 8, centerY, centerX + 8, centerY);
-                    // Vertical line
                     g2d.drawLine(centerX, centerY - 8, centerX, centerY + 8);
                 }
             };
@@ -718,7 +702,6 @@ public class MenuFrame extends JFrame {
             controlPanel.add(btnPlus);
             
         } else {
-            // ROUNDED Add button
             JButton btnAdd = new JButton("+ Add") {
                 @Override
                 protected void paintComponent(Graphics g) {
