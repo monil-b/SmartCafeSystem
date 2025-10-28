@@ -11,7 +11,6 @@ import models.MenuItem;
 
 public class MenuManagementFrame extends JFrame {
     
-    // Coffee theme colors
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -77,7 +76,7 @@ public class MenuManagementFrame extends JFrame {
         
         add(header);
         
-        // Menu table panel with Rounded Border
+        // Menu table panel 
         JPanel menuPanel = new RoundedPanel(20, SOFT_WHITE, LIGHT_COFFEE);
         menuPanel.setBounds(40, 130, 1020, 490);
         menuPanel.setLayout(new BorderLayout(10, 10));
@@ -119,8 +118,6 @@ public class MenuManagementFrame extends JFrame {
         table.getColumnModel().getColumn(4).setPreferredWidth(90);
         table.getColumnModel().getColumn(5).setPreferredWidth(80);
         table.getColumnModel().getColumn(6).setPreferredWidth(250);
-        
-        // Available column renderer with better styling
         table.getColumnModel().getColumn(5).setCellRenderer(new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value,
@@ -272,7 +269,6 @@ public class MenuManagementFrame extends JFrame {
                 g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
                 g2d.dispose();
                 
-                // Paint text manually to avoid issues
                 FontMetrics fm = g.getFontMetrics();
                 int textWidth = fm.stringWidth(getText());
                 int textHeight = fm.getAscent();
@@ -307,7 +303,7 @@ public class MenuManagementFrame extends JFrame {
         
         tableModel.setRowCount(0);
         
-        // IMPORTANT: Use getAllMenuItemsForManagement() to see ALL items
+        // Use getAllMenuItemsForManagement() to see ALL items
         try {
             menuItems = MenuController.getAllMenuItemsForManagement();
         } catch (Exception e) {
