@@ -9,7 +9,6 @@ import models.Owner;
 
 public class KitchenDisplayFrame extends JFrame {
     
-    // Coffee theme colors
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -93,7 +92,7 @@ public class KitchenDisplayFrame extends JFrame {
         
         add(header);
         
-        // Info panel with Rounded Border
+        // Info panel
         JPanel infoPanel = new RoundedPanel(20, new Color(255, 248, 230), LIGHT_COFFEE);
         infoPanel.setBounds(40, 120, 1020, 90);
         infoPanel.setLayout(null);
@@ -256,7 +255,7 @@ public class KitchenDisplayFrame extends JFrame {
         orderLabels[stationNum - 1] = lblOrder;
         panel.add(lblOrder);
         
-        // Item details (without emojis)
+        // Item details 
         JLabel lblItems = new JLabel("", SwingConstants.CENTER);
         lblItems.setFont(new Font("Arial", Font.PLAIN, 12));
         lblItems.setForeground(new Color(100, 100, 100));
@@ -319,7 +318,6 @@ public class KitchenDisplayFrame extends JFrame {
         if (text == null || text.isEmpty()) {
             return "";
         }
-        // Remove all emojis and extra spaces
         return text.replaceAll("[\\p{So}\\p{Sk}]", "").replaceAll("\\s+", " ").trim();
     }
     
@@ -357,7 +355,7 @@ public class KitchenDisplayFrame extends JFrame {
                 // Animated cooking emoji
                 iconLabels[i].setText(getCookingAnimation());
                 
-                // Show item details WITHOUT emojis
+                // Show item details
                 if (itemDetails != null && !itemDetails.isEmpty()) {
                     String cleanedDetails = removeEmojisFromText(itemDetails);
                     // Split into multiple lines if too long
