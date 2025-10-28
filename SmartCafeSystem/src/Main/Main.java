@@ -5,7 +5,6 @@ import views.LoginFrame;
 public class Main {
     
     public static void main(String[] args) {
-        // Set look and feel
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
