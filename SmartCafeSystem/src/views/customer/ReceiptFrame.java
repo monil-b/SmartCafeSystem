@@ -6,8 +6,7 @@ import utils.ReceiptGenerator;
 import models.User;
 
 public class ReceiptFrame extends JFrame {
-    
-    // Modern coffee theme colors
+
     private static final Color COFFEE_BROWN = new Color(139, 90, 60);
     private static final Color LIGHT_COFFEE = new Color(198, 156, 109);
     private static final Color CREAM = new Color(245, 237, 220);
@@ -35,7 +34,7 @@ public class ReceiptFrame extends JFrame {
     private void initComponents() {
         setLayout(null);
         
-        // Header with gradient
+        // Header
         JPanel header = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -68,7 +67,7 @@ public class ReceiptFrame extends JFrame {
         lblOrderId.setBounds(115, 68, 300, 26);
         header.add(lblOrderId);
         
-        // Success badge - ROUNDED
+        // Success badge 
         JPanel successBadge = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -106,7 +105,7 @@ public class ReceiptFrame extends JFrame {
         lblCoffeeIcon2.setBounds(620, 125, 30, 30);
         add(lblCoffeeIcon2);
         
-        // Receipt container - ROUNDED with shadow effect
+        // Receipt container
         JPanel receiptContainer = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -162,7 +161,7 @@ public class ReceiptFrame extends JFrame {
         
         add(receiptContainer);
         
-        // Action buttons - ROUNDED
+        // Action buttons 
         JButton btnPrint = new JButton("🖨️ Print Receipt") {
             @Override
             protected void paintComponent(Graphics g) {
