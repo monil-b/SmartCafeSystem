@@ -15,7 +15,7 @@ public class DatabaseConnection {
     
 	private static final String URL = "jdbc:mysql://localhost:3306/smartcafe";
 	private static final String USER = "root";
-	private static final String PASSWORD = "1234"; 
+	private static final String PASSWORD = System.getenv("SMARTCAFE_DB_PASSWORD");
     
     // Connection pool configuration
     private static final int POOL_SIZE = 5;
