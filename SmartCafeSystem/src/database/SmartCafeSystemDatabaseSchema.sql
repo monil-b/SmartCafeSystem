@@ -97,8 +97,7 @@ CREATE TABLE daily_analytics (
 
 -- Insert default owner (username: admin, password: admin123)
 INSERT INTO owners (username, password, full_name, email, phone) 
-VALUES ('admin', 'admin123', 'Cafe Owner', 'owner@smartcafe.com', '9876543210');
-
+VALUES ('customer', 'customer123', 'customer@test.com', '9876543211');
 -- Insert 3 kitchen stations
 INSERT INTO kitchen_stations (station_name) VALUES 
 ('Station 1'), 
